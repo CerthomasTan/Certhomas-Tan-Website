@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Lottory Ticket</title>
+    <link rel="stylesheet" href="css/stylesheet-lottery.css" />
+    <script src="js/lottery-script.js"></script>
+</head>
+<body>
+    <div class="user-input-container">
+        <h1>LOTTO TICKET GENERATOR</h1>
+        <label for="user-lottery-size">How Many Numbers Would You Like?</label>
+        <input type="number" id="user-lottery-size" placeholder="Enter number from 1 to 8" />
+        <input type="submit" onclick="getRandomNumberArray(document.getElementById('user-lottery-size').value)" value="Get Lotto Ticket" />
+    </div>
+    <div class="ticket-container" id="ticket-hidden">
+        <div class="ticket-inlay">
+            <div class="ticket-number-container">
+                <h1 id="ticket-title">Your Ticket Numbers</h1>
+                <h4 id="ticket-numbers">numbers</h4>
+            </div>
+        </div>
+        <div id="retry-button" onclick="getRandomNumberArray(numbers.length)">Get New Values</div>
+    </div>
+    
+</body>
+</html>

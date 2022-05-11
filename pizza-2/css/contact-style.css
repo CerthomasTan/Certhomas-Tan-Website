@@ -1,0 +1,115 @@
+﻿/*
+    This will inherit all css from base style (my-style.css)
+*/
+@import "my-style.css";
+
+/*
+    This will change the background color to a grey.
+*/
+main {
+    background-color: #8D99AE;
+}
+
+/*
+    This will target the 2 articles and increase the space between the nave menu and other articles.
+    Width will be 100% of the page. 
+*/
+#article-1, #article-2 {
+    margin-top: 30px;
+    width:100%;
+}
+
+/*
+    This will target the aniamted gif img container and make sure the the entire dive is covered with the photo.
+*/
+#article-1 img{
+    width:100%;
+    object-fit:cover;
+}
+
+/*
+    This will be the text on top of the animated gif photo.
+    The position will be relative to the article-1 div.
+    Font was changed to custom font and was increased in size to
+    allow for better visibility.
+*/
+#article-1 h2{
+    position: absolute;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size:3em;
+}
+
+
+/*
+    This will target the div in article-2. This will ensure that the div is 100% the height of article-2.
+    This will also all the div to be seperated by a border to indicated where once starts and the other ends.
+    The min-width will be at least 33% of the page width and contain padding to give some negative space 
+    between items. Font will be change to a custom font. 
+*/
+#article-2 div {
+    height:100%;
+    border-right: 2px double grey;
+    min-width: 33%;
+    padding: 10px;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+/*
+    This will affect all content in the form.
+    The css will make sure that the display is block for it to take entire row space.
+    In addition it will add some margins at the bottom to better sperate the items.
+*/
+#article-2 div form *{
+    display:block;
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+
+/*
+    this targets the text-info container at the bottom of the page.
+    This will be a flex container and will be set to column to allow for
+    items to be stacked on top of each other. This will also make sure that 
+    the content is centered horizontally.
+*/
+#text-info{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+}
+
+/*
+    This will target the text of the text info area. The font will be double the 
+    original size and the text will be justified in the center.
+*/
+#text-info h2, #text-info p {
+    text-align: center;
+    font-size: 2em;
+}
+
+/*
+    This will set the clear and send button to inline block so that the buttons are located on the same line.
+    This will float left.
+*/
+#form-buttons-container input {
+    margin: 10px;
+    display: inline-block;
+    float: left;
+}
+
+/*
+    This will handle the animated gif in the second article. 
+    It will ensure that the img container is 100% of height and width of the div container. It will cover to make
+    the entire div is covers. and it will contain 0 padding. 
+*/
+#article-2 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    padding: 0px;
+}
+
+
+
+
+

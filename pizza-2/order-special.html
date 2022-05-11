@@ -1,0 +1,184 @@
+﻿<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="css/order-style.css" />
+    <title>CTan Pizzaria</title>
+</head>
+<body>
+    <nav>
+        <div id="logo"><img src="img/c-logo.gif" id="logo-img" alt="logo" /><h2>CTan Pizzaria</h2></div>
+        <ul id="links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="order.html">Order</a></li>
+        </ul>
+    </nav>
+    <div id="spacer"></div>
+    <main id="site-container">
+        <article id="article-1">
+            <div>
+                <h2>Its Time to Make Your Pizza Creation</h2>
+            </div>
+        </article>
+        <article id="special-pizza">
+            <div>
+                <h2><a href="order.html">Click Here To Order A Custom Pizza</a></h2>
+            </div>
+        </article>
+        <article id="img-container">
+            <h2>Order Now</h2>
+            <div>
+                <img src="img/order-now.png" alt="order now img" />
+                <p>
+                    Please scroll below and select your amazing pizza. Pick a special type of pizza, a size, a crust. Then fill out your delivery info and contact. We can't wait to start getting you
+                    this amazing piece of work. Hope you enjoy.
+                </p>
+            </div>
+        </article>
+        <article id="order-container">
+            <form method="post" action="https://www.stonecoldprofessor.com/pizza-order.php">
+                <div id="Special-Pizza">
+                    <h2>Select Special Pizza</h2>
+                    <input name="toppings[]" type="radio" id="korea-pizza" value="Bulgolgi, Tofu, Onions, Jalepenos">
+                    <label for="korea-pizza" >Korea Pizza</label>
+
+                    <input name="toppings[]" type="radio" id="lumberjack" value="Peperonni, Italian Sausage, Chicken, Ham, Steak, Black Olives, Tomatoes">
+                    <label for="lumberjack" >Lumberjack Pizza</label>
+
+                    <input name="toppings[]" type="radio" id="veggie-lover" value="Onions, Olives, Rice, Bell Peppers, Tomatoes, Potatoes">
+                    <label for="veggie-lover" >Veggie Lover</label>
+                </div>
+
+                <div id="size-selector">
+                    <h2>Select a Size</h2>
+                    <input name="size" type="radio" id="size-sliders" value="5x Sliders">
+                    <label for="size-sliders" >5x silders</label>
+
+                    <input name="size" type="radio" id="size-personal" value="Personal">
+                    <label for="size-personal" >Personal</label>
+
+                    <input name="size" type="radio" id="size-small" value="Small">
+                    <label for="size-small" >Small</label>
+
+                    <input name="size" type="radio" id="size-medium" value="Medium">
+                    <label for="size-medium" >Medium</label>
+
+                    <input name="size" type="radio" id="size-large" value="Large">
+                    <label for="size-large" >Large</label>
+
+                    <input name="size" type="radio" id="size-xlarge" value="X-Large">
+                    <label for="size-xlarge" >X-Large</label>
+
+                    <input name="size" type="radio" id="size-partysize" value="Party Size">
+                    <label for="size-partysize" >Party Size</label>
+
+                    <input name="size" type="radio" id="size-superpartysize" value="Super Party Size">
+                    <label for="size-superpartysize" >Super Party Size</label>
+
+                    <input name="size" type="radio" id="size-catering" value="Event Catering Size">
+                    <label for="size-catering" >Event Catering Size</label>
+                </div>
+
+                <div id="crust-selector">
+                    <h2>Crust</h2>
+                    <label for="crust">Choose a Crust:</label>
+                    <select name="crust" id="crust">
+                        <option value="thick">Thick</option>
+                        <option value="thin">Thin</option>
+                        <option value="pan">Pan</option>
+                        <option value="NY Style">NY Style</option>
+                        <option value="Stuff Crust">Stuff Crust</option>
+                        <option value="Detriot Style">Detriot Style</option>
+                        <option value="Japan Style">Japan Style</option>
+                        <option value="Italian Style">Italian Style</option>
+                        <option value="Sandwich Crust">Sandwich Crust</option>
+                    </select>
+                </div>
+
+                <div id="adress">
+                    <h2>Delivery Address</h2>
+                    <input name="first" type="text" placeholder="First Name" />
+                    <input name="last" type="text" placeholder="Last Name" />
+                    <br /><br />
+                    <input name="add1" type="text" placeholder="Address 1 Field" required />
+                    <input name="add2" type="text" placeholder="Address 2 Field" />
+                    <input name="city" type="text" placeholder="City" required />
+                    <select name="state" id="state" required>
+                        <option value="" selected="selected">State</option>
+                        <option value="AL">Alabama</option>
+                        <option value="AK">Alaska</option>
+                        <option value="AZ">Arizona</option>
+                        <option value="AR">Arkansas</option>
+                        <option value="CA">California</option>
+                        <option value="CO">Colorado</option>
+                        <option value="CT">Connecticut</option>
+                        <option value="DE">Delaware</option>
+                        <option value="DC">District Of Columbia</option>
+                        <option value="FL">Florida</option>
+                        <option value="GA">Georgia</option>
+                        <option value="HI">Hawaii</option>
+                        <option value="ID">Idaho</option>
+                        <option value="IL">Illinois</option>
+                        <option value="IN">Indiana</option>
+                        <option value="IA">Iowa</option>
+                        <option value="KS">Kansas</option>
+                        <option value="KY">Kentucky</option>
+                        <option value="LA">Louisiana</option>
+                        <option value="ME">Maine</option>
+                        <option value="MD">Maryland</option>
+                        <option value="MA">Massachusetts</option>
+                        <option value="MI">Michigan</option>
+                        <option value="MN">Minnesota</option>
+                        <option value="MS">Mississippi</option>
+                        <option value="MO">Missouri</option>
+                        <option value="MT">Montana</option>
+                        <option value="NE">Nebraska</option>
+                        <option value="NV">Nevada</option>
+                        <option value="NH">New Hampshire</option>
+                        <option value="NJ">New Jersey</option>
+                        <option value="NM">New Mexico</option>
+                        <option value="NY">New York</option>
+                        <option value="NC">North Carolina</option>
+                        <option value="ND">North Dakota</option>
+                        <option value="OH">Ohio</option>
+                        <option value="OK">Oklahoma</option>
+                        <option value="OR">Oregon</option>
+                        <option value="PA">Pennsylvania</option>
+                        <option value="RI">Rhode Island</option>
+                        <option value="SC">South Carolina</option>
+                        <option value="SD">South Dakota</option>
+                        <option value="TN">Tennessee</option>
+                        <option value="TX">Texas</option>
+                        <option value="UT">Utah</option>
+                        <option value="VT">Vermont</option>
+                        <option value="VA">Virginia</option>
+                        <option value="WA">Washington</option>
+                        <option value="WV">West Virginia</option>
+                        <option value="WI">Wisconsin</option>
+                        <option value="WY">Wyoming</option>
+                    </select>
+                    <input name="zip" type="text" placeholder="Zip" required />
+                </div>
+
+                <div id="contact-info">
+                    <h2>Contact Info</h2>
+                    <input name="phone" type="text" placeholder="Phone Number" required />
+                    <input name="email" type="text" placeholder="Email Address" required />
+                </div>
+
+                <div id="comments">
+                    <h2>Message/Comments</h2>
+                    <textarea name="comments" id="message" placeholder="Additional Comments or Instructions"></textarea>
+                </div>
+                <div id="buttons">
+                    <input type="reset" value="Clear" />
+                    <input type="submit" value="Place Order" />
+                </div>
+            </form>
+        </article>
+    </main>
+</body>
+</html>

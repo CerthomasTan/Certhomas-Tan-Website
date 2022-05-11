@@ -1,0 +1,220 @@
+﻿/*
+    This style inherits the my-style class. 
+*/
+@import "my-style.css";
+
+/*
+    This makes it so the articles are flush against the image at the top
+*/
+article{
+    height:auto;
+    margin:0px;
+}
+
+/*
+    This is to increase the size of the height due to increased amount size. 
+*/
+main {
+    height: 2000px;
+}
+
+/*
+    This is the image container div. This will contain the order now header, img, and paragraph.
+    Removes default box img div box shadow. Height is set to 300px.
+*/
+#img-container{
+    justify-content: center;
+    box-shadow:none;
+    height: 300px;
+}
+
+/*
+    This targerts the div inside of img-container div. 
+    This divides the two divs in half. One side to hold the img.
+    Then it will be vertically centered.
+*/
+#img-container div{
+    width: 50%;
+    height:100%;
+    display:flex;
+    flex-direction:row;
+    align-items:center;
+}
+
+/*
+    This targets the order-now img. This makes sure that whole image fits with object fit:contain and sets it to 100% 
+    of the div its contained in. 
+*/
+#img-container img{
+    height:100%;
+    object-fit:contain;
+}
+
+/*
+    This increases the font size of the paragraph by order-img.
+*/
+#img-container p{
+    font-size: 2em;
+}
+
+/*
+    This is alter the div that contains the slide show image.
+    This will make set the first image to pizza-2, set the height to 300px, and centers it.
+    In addition, it contains an animattion that will rotate thru 3 different food img.
+    The background image will be set to cover the entire div. 
+*/
+#article-1 {
+    background-image: url("../img/pizza-2.jpg");
+    height: 300px;
+    justify-content: center;
+    background-size:cover;
+    background-position-y: -300px;
+    position:relative;
+    animation: img-transition linear 10s;
+    animation-iteration-count:infinite;
+}
+
+/*
+    this will change the div that contains the text on top of the slideshow image. 
+    The height will be 25% of the article-1 container and it will have a background color of
+    black. The background will be slightly transparent. It will also have an absolute position relative
+    to the article-1 image and will be a flex container to allow the text to be both verically and horizontally
+    centered. 
+*/
+#article-1 div{
+    height: 25%;
+    font-size:2em;
+    font-family: 'Julius Sans One', sans-serif;
+    color:#EDF2F4;
+    width:100%;
+    position:absolute;
+    background-color:rgb(0 ,0 ,0, .5);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+/*
+    This handle the article container of the special pizza link.
+    It will have a margin to seperate it further from the slide show image
+    and containa box shadow. 
+*/
+#special-pizza {
+    margin: 30px;
+    box-shadow:none;
+}
+
+/*
+    This will handle the actual link object that will have a background color of 
+    red and a border radius to give the link/button a more rounded look.
+    The margins are hangled automatically to allow for the div to be horizontally centered.
+*/
+#special-pizza div{
+    background-color:#D90429;
+    padding: 20px;
+    margin:auto;
+    border:2px solid #D90429;
+    border-radius: 20px;
+}
+
+/*
+    This will handle the anchor tag that leads to different order pages (ie. customizable and special pizzas).
+    Text color is white, font increased for visibility, and font change to custom google font. 
+*/
+#special-pizza a{
+    color: white;
+    font-size: 2em;
+    font-family: 'Julius Sans One', sans-serif;
+}
+
+/*
+    This will handle the state of when the middle red special pizza button is hovered.
+    This will help make sure the user knows that the middle section is clickable. 
+*/
+#special-pizza div:hover{
+    background-color:#2B2D42;
+    border:2px solid #2B2D42;
+}
+
+/*
+    this will tagert the order container article's headers. This will increase the font size, change the font,
+    change the background to seperate the sectioons and give some margins from selectors. 
+*/
+article[id=order-container] h2 {
+    font-size: 2em;
+    margin-bottom: 10px;
+    font-family: 'Julius Sans One', sans-serif;
+    background-color: rgba(128 ,128 ,128, .5)
+}
+
+/*
+    This will increase the space between the groupings such as size, toppings, crust, and etc.
+    It will make sure that the article size is 100% of the width of the page.
+*/
+article[id="order-container"] div{
+    
+    margin: 50px;
+    width: 100%;
+
+}
+
+/*
+    increase the font size of the selections, text in textboxes, and the text areas. 
+*/
+input[type=text], select[name=state], textarea{
+    font-size:1.5em;
+}
+
+/*
+    Puts padding in between the clear and submit ("place order button"). This will add padding to the button as well to
+    increase the size of the button. Font increased to increase visibility.
+*/
+input[type=reset], input[type=submit] {
+    padding: 8px;
+    margin-right: 30px;
+    font-size: 2em;
+}
+
+/*
+    Increase font of all labels as well as increase padding to give more space between other labes and increase
+    button size. 
+*/
+label {
+    font-size: 1.5em;
+    padding:10px;
+}
+
+
+/*
+    Animation for slide show. Will change to new image and then pause on the image. This will be for 
+    div article 1.
+*/
+@keyframes img-transition {
+    0% {
+        background-image: url("../img/pizza-2.jpg");
+    }
+
+    20% {
+        background-image: url("../img/pizza-2.jpg");
+    }
+
+    33% {
+        background-image: url("../img/pasta.jpg");
+    }
+
+    50% {
+        background-image: url("../img/pasta.jpg");
+    }
+
+    66% {
+        background-image: url("../img/breadsticks.jpg");
+    }
+
+    90% {
+        background-image: url("../img/breadsticks.jpg");
+    }
+
+    100% {
+        background-image: url("../img/pizza-2.jpg");
+    }
+}

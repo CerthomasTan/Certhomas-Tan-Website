@@ -1,0 +1,253 @@
+﻿/*Reset padding and margins for entire page. Set box-sizing to border-box*/
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+/*set background color to sand color, this will act as the ground for page*/
+body {
+    background-color:sandybrown;
+    width: 100vw;
+    height: 100vh;
+}
+
+/*This is the sky, setting the width to be entire size of document.Will be z-index to very back*/
+div.sky {
+    position:absolute;
+    background-color: #152852;
+    width: 100%;
+    height: 70%;
+    z-index: -4;
+}
+
+/*this is the purple part of the sky that mimics a twilighting during sunset, this will lie inbetween the ground and the sky.
+    Height was position absolutely and will start 45% down the page.
+*/
+div.twilight-sky {
+    position: absolute;
+    top:45%;
+    background-color: #4B3d60;
+    width: 100%;
+    height: 30%;
+    z-index: -4;
+}
+
+/*
+    This will color the sun dark red, and will be placed behind building. The position of the sun will depend on the view port and adjust
+    accordingly. Circle was a achieved by using border radius at 50% for all corners. 
+*/
+#sun {
+    position: absolute;
+    z-index: -3;
+    background-color: red;
+    width: 700px;
+    height: 700px;
+    top: calc(25vh - 350px);
+    left: calc(50vw - 350px);
+    border: 2px solid red;
+    border-radius: 50%;
+}
+
+/*
+    THis is the sun-highlight. It emits a slightly higher hue of orange. This was achieved by using the same style as sun, but using a right border as well.
+    Since the building is in front, the ackward shape is hidden by the buidling. 
+*/
+#sun-highlight {
+    position: absolute;
+    z-index: -2;
+    width: 700px;
+    height: 700px;
+    top: calc(25vh - 350px);
+    left: calc(50vw - 350px);
+    border: 2px solid red;
+    border-radius: 50%;
+    border-right: 350px solid orangered;
+}
+
+/*
+    this is the cloth part of the flag. This was done by creating a border that was transparent followed by coloring in the right section.
+*/
+div.flag{
+   position:absolute;
+   top: 483px;
+   left: 455px;
+   border:51px solid transparent;
+   border-right-color:yellow;
+}
+
+/*
+    this is the pole of the flag. This is just a square with a background color of brown and set absolutely next to the flag. 
+*/
+div.flag-pole {
+    background-color: brown;
+    height:166px;
+    width:10px;
+    position: absolute;
+    top: 483px;
+    left: 561px;
+}
+
+/*
+    this is the castle ground which the building will be built upon. The color was set to grey. 
+    The top part of the ground was rounded out by using a border radius. 
+    To get the trapazoid shape, all sides exept the top border was filled in. Then by making the left and right transparent,
+    the trapaziod shape was achieved. 
+*/
+div.castle-ground {
+    position: absolute;
+    border-bottom: 300px solid dimgrey;
+    top: calc(100vh - 150px);
+    left: calc(50vw - 485px);
+    border-left: 100px solid transparent;
+    border-right: 100px solid transparent;
+    width: 1000px;
+    border-radius:20% 20% 0% 0%;
+}
+
+/*
+    This is the first floor where all the other divs will be built upon. The location and the base color of the first layer will be contained here.
+*/
+div.firstfloor {
+    background-color: whitesmoke;
+    height: 200px;
+    width: 773px;
+    top: calc(100vh - 340px);
+    left: calc(50vw - 374px);
+}
+
+/*
+    This is the 2nd floor where all the other divs will be built upon. The location and the base color of the first layer will be contained here.
+*/
+div.secondfloor {
+    background-color: whitesmoke;
+    height: 200px;
+    width: 501px;
+    top: calc(100vh - 627px);
+    left: calc(50vw - 242px);
+}
+
+/*
+    This is the 3rd floor where all the other divs will be built upon. The location and the base color of the first layer will be contained here.
+*/
+div.thirdfloor {
+    background-color: whitesmoke;
+    height: 200px;
+    width: 303px;
+    top: calc(100vh - 946px);
+    left: calc(50vw - 140px);
+}
+
+/*
+    This is the style for the roofs. This will determin the base color, shape, and index roofs. 
+    On japanese traditional buildings, there is a bit of a scalloped, scooped roof. To achieve this,
+    the bottom left and right border radius were adjusted to lift the corners.
+*/
+div.roof {
+    z-index: 4;
+    background-color: transparent;
+    border-bottom: 130px solid #73be73;
+    border-left: 200px solid transparent;
+    border-right: 200px solid transparent;
+    border-bottom-left-radius: 25%;
+    border-bottom-right-radius: 25%;
+}
+
+/*
+    This is the style for the first floor roof. This will include the setting size as well as positioning. Positioning was set to absolute. 
+*/
+#first-floor-roof {
+    width: 900px;
+    position: absolute;
+    top: calc(100vh - 430px);
+    left: calc(50vw - 439px);
+}
+
+/*
+    This is the style for the second floor roof. This will include the size as well as positioning. Positioning was set to absolute. 
+*/
+#second-floor-roof {
+    position: absolute;
+    width: 700px;
+    top: calc(100vh - 749px);
+    left: calc(50vw - 338px);
+}
+
+/*
+    This is the style for the second floor roof. This will include the size as well as positioning. Positioning was set to absolute.
+    In addition, this style increased the bottom border give the final roof more height. 
+*/
+#third-floor-roof {
+    position: absolute;
+    border-bottom: 170px solid #73be73;
+    width: 483px;
+    top: calc(100vh - 1069px);
+    left: calc(50vw - 230px);
+}
+
+/*
+    This sets all id with castle-wall in the name to absolute positioning. In addition this will set the index to be the most back part of the building segament
+*/
+[id *= castle-wall] {
+    z-index: -1;
+    position: absolute;
+}
+
+/*
+    This will target all div id that contain the text "outer-wall".
+    This is the black part of the castle wall. This will adopt the position of the castle wall. 
+    This will also be set half way down the wall using top 50%.
+    In addition, the height will be set to 50%.
+*/
+div [id *= outer-wall] {
+    position: relative;
+    top: 50%;
+    left: 0px;
+    z-index: 2;
+    background-color: #191919;
+    height: 50%;
+}
+
+/*
+    This is the window holder. This will adopt the position of the outer wall. This will contain all the 
+    window elements and space then evenly while keeping the extra space from the edges. Height will be around 50% of the outer wall.
+*/
+div.window-holder {
+    display: flex;
+    position:relative;
+    z-index: 3;
+    margin-left:20px;
+    margin-right:20px;
+    height: 50%;
+    top: 10px;
+    justify-content:space-around;
+}
+
+/*
+    this is the window, to achieve a window like look. The same background color was used as the castle wall. This will give 
+    the illusion of the see thru areas in the outer wall. There is so margins inbetween divs to allow the look of window frames.
+*/
+div.window {
+    background-color: whitesmoke;
+    position: relative;
+    z-index: 3;
+    height: 100%;
+    width: 5%;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+/*
+    This sets the width of the 2nd floor windows
+*/
+div.secondfloor div.window {
+    width: 10%;
+}
+
+/*
+    This sets the width of the 3rd floor windows
+*/
+div.thirdfloor div.window {
+    width: 30%;
+}
+

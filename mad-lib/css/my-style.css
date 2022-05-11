@@ -1,0 +1,60 @@
+﻿/*This resets the margins and padding to 0.*/
+*
+{
+    margin:0px;
+    padding:0px;
+}
+
+/*website to fade in on load*/
+body {
+    animation: FadeIn;
+    animation-duration: 1s;
+}
+
+/*makes all divs have some space against each other, set text to white, and change bg to grey.*/
+div{
+    padding: 50px;
+    background-color: dimgrey;
+    margin: 20px 50px;
+    color: white;
+    text-align:center;
+    box-shadow: 5px 5px 10px black;
+    border-radius: 10px 10px;
+    font-family:Century;
+}
+
+/*increase all text and all elements inside div to have padding*/
+div *{
+    font-size: 150%;
+    padding: 10px;
+    margin: 10px;
+}
+
+/*increase h1 font size on top of the div modifier*/
+h1 {
+    font-size: 200%;
+}
+
+/*hides the adventure text box when nothing is in it. Is default at page load. Js will change this to adventure show once
+    funtion runs.
+*/
+#adventure-hidden{
+    opacity:0;
+}
+
+/*will display container, this will also play a fade in animation*/
+#adventure-show {
+    opacity: 1;
+    animation:FadeIn;
+    animation-duration: 1s;
+}
+
+/*fade in animation*/
+@keyframes FadeIn{
+    from{
+        opacity:0;
+    }
+    to{
+        opacity:1;
+    }
+}

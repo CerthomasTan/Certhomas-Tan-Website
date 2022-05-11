@@ -1,0 +1,164 @@
+﻿/*resets the margins and padding. This will also set the box sizing to bordrer box*/
+*
+{
+    margin :0px;
+    padding: 0px;
+    box-sizing:border-box;
+}
+
+/*change the background color to white*/
+body{
+    background-color: white;
+}
+
+/*This is the style for the input container. Will use flex box and order them in columns.
+    max width will be 70% of the width to allow responsiveness. Items will be aligned in center. 
+*/
+.user-input-container {
+    color:black;
+    display: flex;
+    flex-direction: column;
+    max-width: 70%;
+    margin: 20px auto;
+    align-items: center;
+}
+
+/*
+    this will make all childs in the user input container to have a 10px margin.
+*/
+.user-input-container *{
+    margin: 10px;
+}
+
+/*
+    This will affect the user input label. Increase font and bold the text. 
+*/
+.user-input-container label {
+    font-size: 200%;
+    font-weight: bold;
+}
+
+ /*
+    This will affect the user inputs. Increase font and decrease max width. 
+*/
+.user-input-container input{
+    font-size: 150%;
+    max-width: 50%;
+}
+
+/*
+    this will affect the ticket container. The bg color will be gold to mimic a lotto ticket.
+    it will only take up 70% of the screen at max and will be centered in the middle. 
+    Padding is added to give room between it and the inlay. The ticket will be rounded and contain
+    a box shadow to seperate the ticket from the bg. 
+*/
+.ticket-container
+{
+    margin: 20px auto;
+    max-width: 70%;
+    background-color: gold;
+    min-height: 500px;
+    border-radius: 20px;
+    padding: 60px;
+    box-shadow:5px 5px 10px grey;
+    
+}
+
+/*
+    this will be used to set the animation and replay of the ticket when needed
+*/
+#ticket{
+    animation: fadeIn ease-out 1s;
+}
+
+/*
+    this will be used to hide the ticket
+*/
+#ticket-hidden{
+    animation: none;
+    opacity:0;
+}
+
+/*
+    This is the black border inside the ticket. this will act as the inlay. The inlay is a black border with rounded corners. 
+*/
+.ticket-inlay {
+    border: 10px solid black;
+    height:100%;
+    border-radius: 20px;
+    margin: auto auto;
+}
+
+/*
+    This is the container inside the ticket that will contain the numbers. 
+    The text will be centered, it will be slightly smaller than the inlay div, and the items inside
+    will be flex boxes in a column arrangement. 
+*/
+div.ticket-number-container{
+    text-align:center;
+    height:95%;
+    padding: 10px;
+    display: flex;
+    flex-direction:column;
+    margin: 10px;
+    border:2px black solid;
+
+}
+
+/*
+    This will affect all the text inside the ticket number container to have increased text and center the text. 
+*/
+div.ticket-number-container #ticket-title, div.ticket-number-container #ticket-numbers {
+    text-align: center;
+    font-size: 300%;
+}
+
+/*
+    This will be the black bottom border underneath the ticket title. 
+*/
+div.ticket-number-container #ticket-title{
+    margin: 20px;
+    border-bottom: 10px solid black;
+}
+
+/*
+    This will target the ticket numbers. This will give the bg color containing the ticket numbers to be antique white and have 
+    rounded corners.
+*/
+div.ticket-number-container #ticket-numbers{
+    margin:40px;
+    padding: 20px;
+    border: 2px gold solid;
+    border-radius:10px;
+    background-color: antiquewhite;
+}
+
+/*
+    This will target the get new numbers button. It will change the cursor to pointer to indicated there is a botton.
+    In addition, this will alter the font to be noticable but not distracting. 
+*/
+#retry-button{
+    display:inline;
+    align-content:center;
+    cursor:pointer;
+    font-size:200%;
+    font-weight:bold;
+    transition: 0.3s;
+}
+
+/*
+    hover animation to help end user notice a clickable button
+*/
+#retry-button:hover{
+    background: white;
+}
+
+/*fade in animation*/
+@keyframes fadeIn{
+    from{
+        opacity:0;
+    }
+    to{
+        opacity:1;
+    }
+}

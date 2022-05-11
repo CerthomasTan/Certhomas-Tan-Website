@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Tic Tac Toe</title>
+    <link rel="stylesheet" href="css/stylesheet-1.css" />
+    <script src="js/script-1.js"></script>
+</head>
+<body>
+    <div id="main-content">
+        <div id="header-container" class="fadeIn">
+            <div id="title-container">
+                Welcome To The TicTacToe Game
+            </div>
+            <div class="form-container">
+                <form id="playerNameForm">
+                    <label for="player-one-name">Player One Name</label>
+                    <input id="player-one-name" type="text" name="playerOneName" value="" placeholder="Enter Name" /><br />
+                    <label for="player-two-name">Player Two Name</label>
+                    <input id="player-two-name" type="text" name="playerTwoName" value="" placeholder="Enter Name" /><br />
+                    <input id="play-button" type="button" value="Play" onclick="setPlayersName('playerNameForm')"/>
+                </form>
+            </div>
+        </div>
+        <div id="result-container">
+            <div id="results">
+                Welcome To The TicTacToe Game
+            </div>
+            <div class="form-container">
+                <form action="#" onsubmit="return false;">
+                    <input id="retry-button" type="button" value="Retry" onclick="replayGame()"/>
+                </form>
+            </div>
+        </div>
+        <div id="game-container">
+            <div id="player-turn-display">
+                Player Turn
+            </div>
+            <div id="game-board">
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>

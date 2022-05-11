@@ -1,0 +1,87 @@
+﻿/*
+    This will import the page from my-style.css
+*/
+@import "my-style.css";
+
+/*
+    Chnage background to a dark blue.
+*/
+main {
+    background-color: #2B2D42;
+
+}
+
+nav{
+    z-index:2;
+}
+
+/*
+    will target the first article. THis will increase the margin to give alot of negatice space.
+    This will also increase the space from the nav menu and spacer.
+    It will be the relative position parent for the text and founder photo.
+    The background will be over written to blue to blend with the background. 
+    Will contain an animation to fade and and slide left as page loads in.
+*/
+#article-1 {
+    margin: 40px;
+    margin-top: 70px;
+    position: relative;
+    background-color: #2B2D42;
+    animation: article-1-animation ease-out 1.5s;
+    animation-delay:.20s;
+    animation-fill-mode:both;
+}
+
+/*
+    This will set both itms in article-1 to have 100% width of the article.
+*/
+#article-1 div, #founder-photo{
+    width: 100%;
+}
+
+/*
+    This will handle the founder img. It will cover the entire parent container and positioned to allow
+    for the photo to focus on the chefs faces. There is a box shadow with a border radius to give the image
+    itself a nice rounded corner. Z-index ensure that the photo is behind the text. 
+    THe picture positon is relative to article-1 and offset to the left. 
+*/
+#founder-photo {
+    object-fit: cover;
+    object-position: 0px -100px;
+    box-shadow: 0 0 0 13px #2B2D42;
+    border-radius: 20px;
+    position: relative;
+    left: 200px;
+    z-index: 0;
+}
+
+/* 
+    This is the text next to the chef photo. It will be on top of the chef photo using z-index and its position is
+    relative to the article-1. This will be offset to the right and contain a shadow to increase visibility. 
+    Font increased to increase visibility. This will overwrite the color to white and make the backgroung color 
+    trasnparent.
+*/
+#chef-info {
+    position: absolute;
+    left: 100px;
+    font-size: 3em;
+    z-index: 1;
+    text-shadow: 2px 2px 10px black;
+    background-color: transparent;
+    font-family: 'Julius Sans One', sans-serif;
+    color: floralwhite;
+}
+
+/*
+    This is the animation that will slide left to right.
+*/
+@keyframes article-1-animation{
+    from{
+        left:500px;
+    }
+
+    to{
+        left: 20px;
+    }
+}
+

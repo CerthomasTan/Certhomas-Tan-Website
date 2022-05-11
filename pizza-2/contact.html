@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="css/contact-style.css" />
+    <title>CTan Pizzaria</title>
+</head>
+<body>
+    <nav>
+        <div id="logo"><img src="img/c-logo.gif" id="logo-img" alt="logo" /><h2>CTan Pizzaria</h2></div>
+        <ul id="links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="order.html">Order</a></li>
+        </ul>
+    </nav>
+    <div id="spacer"></div>
+    <main id="site-container">
+            <article id="article-1">
+                <img src="img/customer-satisfaction.gif" alt="fistbump gif"/>
+                <h2>Lets Have a Chat</h2>
+            </article>
+
+            <article id="article-2">
+                <div id="graphic">
+                    <img src="img/eating.gif" alt="bear eating gif"/>
+                </div>
+                <div id="text-info">
+                    <h2>Its your food, Lets Make it Right</h2>
+                    <p>We are always happy to hear anything from our customers. Whether that is how awesome the food is or
+                    how beatiful the sky is. But we want to also hear your sugestions and gripes, this is your food 
+                    and we want to make it right.</p>
+                </div>
+                <div>
+                    <form method="post" action="https://www.stonecoldprofessor.com/pizza-contact.php">
+                        <label for="fname">First Name:</label>
+                        <input name="first-name" id="fname" placeholder="First Name" type="text" />
+
+                        <label for="lname">Last Name:</label>
+                        <input name="last-name" id="lname" placeholder="Last Name" type="text" />
+                        <label for="email">Email:</label>
+                        <input name="email" id="email" placeholder="Email Address" type="text" />
+
+                        <label for="message">Message: </label>
+                        <textarea name="message" id="message" placeholder="Talk to Me"></textarea>
+
+                        <div id="form-buttons-container">
+                            <input type="reset" value="Clear" />
+                            <input type="submit" value="Send" />
+                        </div>
+                    </form>
+                </div>
+            </article>
+    </main>
+
+</body>
+</html>

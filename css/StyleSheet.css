@@ -1,0 +1,248 @@
+﻿/*Varaibles to store pallete colors*/
+:root {
+    --paradise-pink: #ef476fff;
+    --orange-yellow-crayola: #ffd166ff;
+    --caribbean-green: #06d6a0ff;
+    --blue-ncs: #118ab2ff;
+    --midnight-green-eagle-green: #073b4cff;
+    --black: black;
+}
+
+/*Creates a smooth scroll when clicking on the nav tabs*/
+html {
+    scroll-behavior: smooth;
+}
+
+/*
+    Change background to black
+*/
+body {
+    background-color: black;
+}
+
+/*
+    This will be the logo on the top left. It will contain an animated gif. 
+    This will be absolute relative to the nav bar. It will over hang over the nav bar.
+*/
+#logo{
+    background-image: url("../img/c-logo.gif");
+    background-color:none;
+    background-size:contain;
+    background-repeat:no-repeat;
+    position: absolute;
+    top: 30px;
+    height: 100%;
+}
+
+/*This will be the nav bar at the top*/
+#navbar-top{
+    background-color: var(--midnight-green-eagle-green);
+    justify-self: end;
+}
+
+/*This will alter the brand. It will give it a set size and have no padding. It will be white to match the gif bg*/
+#brand{
+    padding:0px;
+    margin-block-start:0px;
+    background-color:white;
+    height: 200px;
+    width: 200px;
+}
+
+/*this will control the height of the mobile brand anchor*/
+#brand-mobile{
+    height:auto;
+    width: auto;
+}
+
+/*This is the splash container. It will contain a photo that will auto size depending on the width. Its transition will be smoothed out and will cover the entire container*/
+#splash-container {
+    background-image: url("../img/splash-edit.jpg");
+    background-size: cover;
+    background-position-x: 50%;
+    background-repeat:no-repeat;
+    height:100vh;
+    transition: 1s;
+    opacity:0;
+}
+
+/*This will set the opacity to zero to set up for later animation*/
+#splash-container > div{
+    opacity:0;
+}
+
+/*This is the main-content-spacer, this will push the rest of the page down to account for the fixed navbar at the top*/
+#main-content-spacer {
+    height: 300px;
+    transition: 1s;
+}
+
+/*This will alter the color of active tabs in the 2nd nav bar. This will overwrite some the original bootstrap*/
+.nav-tabs .nav-link.active {
+    background-color: black;
+    color: white;
+    border-color: black;
+}
+
+/*This will change the default color of the tabs in the 2nd nav bar. This is used when tab is not active*/
+.nav-tabs .nav-link{
+    background-color: var(--orange-yellow-crayola);
+    color: var(--black);
+}
+
+/*This changes the bg color of the main content to black*/
+.main-content{
+    background-color: black;
+}
+
+/*This will give a pastel green color border and a pink shadow to the quote containers, the main speech bubble, and the about container*/
+#about-text, div[class*="quote-container"] div:first-child, #splash-title {
+    background-color: white;
+    border-radius: 20px 20px;
+    border: 5px solid var(--caribbean-green);
+    box-shadow: 20px 10px 2px var(--paradise-pink);
+}
+
+/*This will stylize the large bubbles in the speech container to have larger text and be able to center the text both x and y. This will be done using a flex container*/
+div[class*="quote-container"] div:first-child {
+    font-size: 1.5em;
+    min-height: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+/*This will stylize the smaller bubble divs to be narrower, have a green border with pink shadown, and increase the height*/
+div[class*="quote-container"] div:nth-child(2), div[class*="quote-container"] div:nth-child(3) {
+    background-color: white;
+    border: 2px solid var(--caribbean-green);
+    box-shadow: 5px 5px 2px var(--paradise-pink);
+    border-radius: 20px 20px;
+    font-size: 1.5em;
+    min-height: 20px;
+    margin: 10px 0px;
+    width: 7%;
+}
+
+/*This will stylize the smallest bubble divs to be narrower than the 2nd bubble*/
+div[class*="quote-container"] div:nth-child(3) {
+    width: 2%;
+}
+
+/*adjust the splash screen text to be more in the center*/
+@media only screen and (max-width: 1000px) {
+    #splash-container {
+        background-position-x: 55%;
+    }
+
+    #main-content-spacer {
+        height: 200px
+    }
+}
+
+/*This will place the text of the splash screen higher up, decrease the font of the quote, and decrease the font of the reflection paragraph.*/
+@media only screen and (max-width: 766px) {
+    #main-content-spacer{
+        height: 100px
+    }
+    #quote {
+        font-size: 1em;
+    }
+    #reflection > * {
+        font-size: 1em;
+    }
+}
+
+/*This is the animation section. Add the class to apply animation*/
+/*this is the fade in animation. Will stay on screen due to animation fill mode*/
+[class*="fadeIn"]{
+    animation:fadeInAnim 1s ease-in;
+    animation-fill-mode:forwards;
+}
+
+@keyframes fadeInAnim {
+    0% {
+        visibility: hidden;
+    }
+
+    1% {
+        opacity: 0;
+        visibility: visible;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+/*this is the fade out animation. Will stay off the screen due to animation fill mode*/
+[class*="fadeOut"] {
+    animation: fadeOutAnim 1s ease-in;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fadeOutAnim {
+
+    1% {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    99% {
+        opacity: 0;
+    }
+
+    110% {
+        visibility: hidden;
+    }
+}
+
+/*this is for navbar to fall from top to bottom*/
+[class *= "navBarFallIn"] {
+    animation: navBarFallIn 1s ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+@keyframes navBarFallIn {
+    0% {
+        display: flex;
+        top: -227px;
+    }
+
+    1% {
+        visibility: visible;
+    }
+
+    100% {
+        top: 0px
+    }
+}
+
+/*This is an infinite animation for the speech bubble. This will bob up and down like a video game speech bubble.*/
+[class *= "bobbin"] {
+    animation: bobbinAnim 2s ease-in-out infinite;
+    animation-fill-mode: forwards;
+}
+
+@keyframes bobbinAnim {
+    0% {
+        top: -20px;
+    }
+
+    50% {
+        top: 20px;
+    }
+
+    100% {
+        top: -20px
+    }
+}
+
+
+
+
+
+
+
